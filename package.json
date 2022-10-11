@@ -1,0 +1,24 @@
+{
+  "name": "sysops_sites",
+  "version": "1.0.0",
+  "description": "This is an Express application to keep track of assets at different system operations sites.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmjgrubb/sysops_sites.git"
+  },
+  "author": "CMJ Grubb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmjgrubb/sysops_sites/issues"
+  },
+  "homepage": "https://github.com/cmjgrubb/sysops_sites#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.5"
+  }
+}
