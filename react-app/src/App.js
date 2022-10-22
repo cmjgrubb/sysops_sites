@@ -9,6 +9,23 @@ function MongoConnector({ Name }) {
   );
 }
 
+class NameList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      users: [],
+    };
+
+    this.getRandomUsers = this.getRandomUsers.bind(this);
+  }
+
+async function FetchFromDB() {
+  const res = await fetch(`http://localhost:8080/api/sysops`);
+  const data = await res.json();
+  return data.results;
+}
+
 function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
