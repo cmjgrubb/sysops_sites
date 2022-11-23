@@ -51,9 +51,7 @@ const PumpStations = ({
     <td>{panelhmi}</td>
     <td>{pumpcontrolpanelip}</td>
     <td>{pumpcontrolpanelmac}</td>
-    <td>
-      <button onClick={() => this.DeleteFromDB(psid)}>Delete</button>
-    </td>
+    <td>{psid}</td>
   </tr>
 );
 
@@ -66,33 +64,13 @@ export default class PumpStationList extends Component {
     };
 
     this.FetchFromDB = this.FetchFromDB.bind(this);
+    this.DeleteFromDB = this.DeleteFromDB.bind(this);
   }
 
   async FetchFromDB() {
     const res = await fetch(`http://localhost:8080/api/sysops`);
     const data = await res.json();
     return data;
-  }
-
-  DeleteFromDB(recordId) {
-    const { pumpstations } = this.state;
-    fetch(`http://localhost:8080/api/sysops/${recordId}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            response: result,
-            pumpstations: pumpstations.filter(
-              (pumpstation) => pumpstation._id !== recordId
-            ),
-          });
-        },
-        (error) => {
-          this.setState({ error });
-        }
-      );
   }
 
   async componentDidMount() {
@@ -105,6 +83,7 @@ export default class PumpStationList extends Component {
       <div>
         <div>
           <Link to="/add">Add</Link>
+          <Link to="/delete">Delete</Link>
           <Link to="/edit">Edit</Link>
           <Link to="/find">Find</Link>
         </div>
