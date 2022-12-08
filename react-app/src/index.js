@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import Add from "./Add";
-import Edit from "./Edit";
-import Find from "./Find";
+import Create from "./components/create";
+import Read from "./components/read";
+import Update from "./components/update";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "semantic-ui-css/semantic.min.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,9 +15,9 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/add" element={<Add />} />
-        <Route path="/edit" element={<Edit />} />
-        <Route path="/find" element={<Find />} />
+        <Route path="/create" element={<Create />} />
+        <Route path="/read" element={<Read />} />
+        <Route path="/update" element={<Update />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -64,7 +64,6 @@ export default class PumpStationList extends Component {
     };
 
     this.FetchFromDB = this.FetchFromDB.bind(this);
-    this.DeleteFromDB = this.DeleteFromDB.bind(this);
   }
 
   async FetchFromDB() {

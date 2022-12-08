@@ -1,8 +1,11 @@
 import "./App.css";
-import PumpStationList from "./PumpStationList";
+//import Create from './components/create';
+import Read from "./components/read";
+//import Update from './components/update';
+//import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-  return <PumpStationList />;
+  return <Read />;
 }
 
 export default App;
