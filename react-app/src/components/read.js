@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 export default function Read() {
   const [APIData, setAPIData] = useState([]);
@@ -78,8 +79,8 @@ export default function Read() {
   };
 
   return (
-    <div>
-      <Table singleLine>
+    <div className="scrollable">
+      <Table singleLine sortable striped>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
@@ -113,7 +114,7 @@ export default function Read() {
         <Table.Body>
           {APIData.map((data) => {
             return (
-              <Table.Row>
+              <Table.Row key={data._id}>
                 <Table.Cell>{data.Name}</Table.Cell>
                 <Table.Cell>{data.Address}</Table.Cell>
                 <Table.Cell>{data.SerialNo}</Table.Cell>
