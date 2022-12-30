@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import { Button, Form } from "semantic-ui-react";
 import axios from "axios";
 import { useNavigate } from "react-router";
@@ -19,16 +21,24 @@ export default function Update() {
   const [PlcMAC, setPlcMAC] = useState("");
   const [PlcMake, setPlcMake] = useState("");
   const [PlcModel, setPlcModel] = useState("");
-  const [PlcInstallDate, setPlcInstallDate] = useState("");
+  const [PlcInstallDate, setPlcInstallDate] = useState(null);
   const [PanelIP, setPanelIP] = useState("");
   const [PanelMAC, setPanelMAC] = useState("");
   const [PanelMake, setPanelMake] = useState("");
   const [PanelModel, setPanelModel] = useState("");
-  const [PanelInstallDate, setPanelInstallDate] = useState("");
+  const [PanelInstallDate, setPanelInstallDate] = useState(null);
   const [PanelOS, setPanelOS] = useState("");
   const [PanelHMI, setPanelHMI] = useState("");
   const [PumpControlPanelIP, setPumpControlPanelIP] = useState("");
   const [PumpControlPanelMAC, setPumpControlPanelMAC] = useState("");
+
+  const handlePlcDateChange = (date) => {
+    setPlcInstallDate(date);
+  };
+
+  const handlePanelDateChange = (date) => {
+    setPanelInstallDate(date);
+  };
 
   useEffect(() => {
     setID(localStorage.getItem("ID"));
@@ -45,12 +55,22 @@ export default function Update() {
     setPlcMAC(localStorage.getItem("PLC MAC"));
     setPlcMake(localStorage.getItem("PLC Make"));
     setPlcModel(localStorage.getItem("PLC Model"));
-    setPlcInstallDate(localStorage.getItem("PLC Install Date"));
+    try {
+      setPlcInstallDate(new Date(localStorage.getItem("PLC Install Date")));
+    } catch (error) {
+      console.error(error);
+      setPlcInstallDate(null);
+    }
     setPanelIP(localStorage.getItem("Panel IP"));
     setPanelMAC(localStorage.getItem("Panel MAC"));
     setPanelMake(localStorage.getItem("Panel Make"));
     setPanelModel(localStorage.getItem("Panel Model"));
-    setPanelInstallDate(localStorage.getItem("Panel Install Date"));
+    try {
+      setPanelInstallDate(new Date(localStorage.getItem("Panel Install Date")));
+    } catch (error) {
+      console.error(error);
+      setPanelInstallDate(null);
+    }
     setPanelOS(localStorage.getItem("Panel OS"));
     setPanelHMI(localStorage.getItem("Panel HMI"));
     setPumpControlPanelIP(localStorage.getItem("Pump Control Panel IP"));
@@ -197,10 +217,9 @@ export default function Update() {
         </Form.Field>
         <Form.Field>
           <label>PLC Install Date</label>
-          <input
-            placeholder="PLC Install Date"
-            value={PlcInstallDate}
-            onChange={(e) => setPlcInstallDate(e.target.value)}
+          <DatePicker
+            selected={PlcInstallDate}
+            onChange={handlePlcDateChange}
           />
         </Form.Field>
         <Form.Field>
@@ -237,10 +256,9 @@ export default function Update() {
         </Form.Field>
         <Form.Field>
           <label>Panel Install Date</label>
-          <input
-            placeholder="Panel Install Date"
-            value={PanelInstallDate}
-            onChange={(e) => setPanelInstallDate(e.target.value)}
+          <DatePicker
+            selected={PanelInstallDate}
+            onChange={handlePanelDateChange}
           />
         </Form.Field>
         <Form.Field>

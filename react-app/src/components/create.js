@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import { Button, Form } from "semantic-ui-react";
 import axios from "axios";
 import { useNavigate } from "react-router";
@@ -18,12 +20,12 @@ export default function Create() {
   const [PlcMAC, setPlcMAC] = useState("");
   const [PlcMake, setPlcMake] = useState("");
   const [PlcModel, setPlcModel] = useState("");
-  const [PlcInstallDate, setPlcInstallDate] = useState("");
+  const [PlcInstallDate, setPlcInstallDate] = useState(new Date());
   const [PanelIP, setPanelIP] = useState("");
   const [PanelMAC, setPanelMAC] = useState("");
   const [PanelMake, setPanelMake] = useState("");
   const [PanelModel, setPanelModel] = useState("");
-  const [PanelInstallDate, setPanelInstallDate] = useState("");
+  const [PanelInstallDate, setPanelInstallDate] = useState(new Date());
   const [PanelOS, setPanelOS] = useState("");
   const [PanelHMI, setPanelHMI] = useState("");
   const [PumpControlPanelIP, setPumpControlPanelIP] = useState("");
@@ -152,9 +154,9 @@ export default function Create() {
         </Form.Field>
         <Form.Field>
           <label>PLC Installation Date</label>
-          <input
+          <DatePicker
             placeholder="PlcInstallDate"
-            onChange={(e) => setPlcInstallDate(e.target.value)}
+            onChange={(date) => setPlcInstallDate(date)}
           />
         </Form.Field>
         <Form.Field>
@@ -187,9 +189,9 @@ export default function Create() {
         </Form.Field>
         <Form.Field>
           <label>Panel Installation Date</label>
-          <input
+          <DatePicker
             placeholder="PanelInstallDate"
-            onChange={(e) => setPanelInstallDate(e.target.value)}
+            onChange={(date) => setPanelInstallDate(date)}
           />
         </Form.Field>
         <Form.Field>
