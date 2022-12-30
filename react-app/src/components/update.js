@@ -271,7 +271,7 @@ export default function Update() {
           <label>Pump Control Panel MAC</label>
           <input
             placeholder="Pump Control Panel MAC"
-            value={Address}
+            value={PumpControlPanelMAC}
             onChange={(e) => setPumpControlPanelMAC(e.target.value)}
           />
         </Form.Field>
