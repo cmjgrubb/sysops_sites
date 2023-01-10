@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Table, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "../App.css";
 
@@ -80,77 +79,76 @@ export default function Read() {
 
   return (
     <div className="scrollable">
-      <Table singleLine sortable striped>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Address</Table.HeaderCell>
-            <Table.HeaderCell>Serial Number</Table.HeaderCell>
-            <Table.HeaderCell>Phone Provider</Table.HeaderCell>
-            <Table.HeaderCell>Internet Provider</Table.HeaderCell>
-            <Table.HeaderCell>Landline Number</Table.HeaderCell>
-            <Table.HeaderCell>Cellular Number</Table.HeaderCell>
-            <Table.HeaderCell>Public IP</Table.HeaderCell>
-            <Table.HeaderCell>Subnet</Table.HeaderCell>
-            <Table.HeaderCell>PLC IP</Table.HeaderCell>
-            <Table.HeaderCell>PLC MAC</Table.HeaderCell>
-            <Table.HeaderCell>PLC Make</Table.HeaderCell>
-            <Table.HeaderCell>PLC Model</Table.HeaderCell>
-            <Table.HeaderCell>PLC Install Date</Table.HeaderCell>
-            <Table.HeaderCell>Panel IP</Table.HeaderCell>
-            <Table.HeaderCell>Panel MAC</Table.HeaderCell>
-            <Table.HeaderCell>Panel Make</Table.HeaderCell>
-            <Table.HeaderCell>Panel Model</Table.HeaderCell>
-            <Table.HeaderCell>Panel Install Date</Table.HeaderCell>
-            <Table.HeaderCell>Panel OS</Table.HeaderCell>
-            <Table.HeaderCell>Panel HMI</Table.HeaderCell>
-            <Table.HeaderCell>Pump Control Panel IP</Table.HeaderCell>
-            <Table.HeaderCell>Pump Control Panel MAC</Table.HeaderCell>
-            <Table.HeaderCell>Update</Table.HeaderCell>
-            <Table.HeaderCell>Delete</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-
-        <Table.Body>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Serial Number</th>
+            <th>Phone Provider</th>
+            <th>Internet Provider</th>
+            <th>Landline Number</th>
+            <th>Cellular Number</th>
+            <th>Public IP</th>
+            <th>Subnet</th>
+            <th>PLC IP</th>
+            <th>PLC MAC</th>
+            <th>PLC Make</th>
+            <th>PLC Model</th>
+            <th>PLC Install Date</th>
+            <th>Panel IP</th>
+            <th>Panel MAC</th>
+            <th>Panel Make</th>
+            <th>Panel Model</th>
+            <th>Panel Install Date</th>
+            <th>Panel OS</th>
+            <th>Panel HMI</th>
+            <th>Pump Control Panel IP</th>
+            <th>Pump Control Panel MAC</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
           {APIData.map((data) => {
             return (
-              <Table.Row key={data._id}>
-                <Table.Cell>{data.Name}</Table.Cell>
-                <Table.Cell>{data.Address}</Table.Cell>
-                <Table.Cell>{data.SerialNo}</Table.Cell>
-                <Table.Cell>{data.PhoneProvider}</Table.Cell>
-                <Table.Cell>{data.InternetProvider}</Table.Cell>
-                <Table.Cell>{data.LandlineNumber}</Table.Cell>
-                <Table.Cell>{data.CellularNumber}</Table.Cell>
-                <Table.Cell>{data.PublicIP}</Table.Cell>
-                <Table.Cell>{data.Subnet}</Table.Cell>
-                <Table.Cell>{data.PlcIP}</Table.Cell>
-                <Table.Cell>{data.PlcMAC}</Table.Cell>
-                <Table.Cell>{data.PlcMake}</Table.Cell>
-                <Table.Cell>{data.PlcModel}</Table.Cell>
-                <Table.Cell>{data.PlcInstallDate}</Table.Cell>
-                <Table.Cell>{data.PanelIP}</Table.Cell>
-                <Table.Cell>{data.PanelMAC}</Table.Cell>
-                <Table.Cell>{data.PanelMake}</Table.Cell>
-                <Table.Cell>{data.PanelModel}</Table.Cell>
-                <Table.Cell>{data.PanelInstallDate}</Table.Cell>
-                <Table.Cell>{data.PanelOS}</Table.Cell>
-                <Table.Cell>{data.PanelHMI}</Table.Cell>
-                <Table.Cell>{data.PumpControlPanelIP}</Table.Cell>
-                <Table.Cell>{data.PumpControlPanelMAC}</Table.Cell>
-                <Link to="/update">
-                  <Table.Cell>
-                    <Button onClick={() => setData(data)}>Update</Button>
-                  </Table.Cell>
-                </Link>
-                <Table.Cell>
-                  <Button onClick={() => onDelete(data._id)}>Delete</Button>
-                </Table.Cell>
-              </Table.Row>
+              <tr key={data._id}>
+                <td>{data.Name}</td>
+                <td>{data.Address}</td>
+                <td>{data.SerialNo}</td>
+                <td>{data.PhoneProvider}</td>
+                <td>{data.InternetProvider}</td>
+                <td>{data.LandlineNumber}</td>
+                <td>{data.CellularNumber}</td>
+                <td>{data.PublicIP}</td>
+                <td>{data.Subnet}</td>
+                <td>{data.PlcIP}</td>
+                <td>{data.PlcMAC}</td>
+                <td>{data.PlcMake}</td>
+                <td>{data.PlcModel}</td>
+                <td>{data.PlcInstallDate}</td>
+                <td>{data.PanelIP}</td>
+                <td>{data.PanelMAC}</td>
+                <td>{data.PanelMake}</td>
+                <td>{data.PanelModel}</td>
+                <td>{data.PanelInstallDate}</td>
+                <td>{data.PanelOS}</td>
+                <td>{data.PanelHMI}</td>
+                <td>{data.PumpControlPanelIP}</td>
+                <td>{data.PumpControlPanelMAC}</td>
+                <td>
+                  <Link to="/update">
+                    <button onClick={() => setData(data)}>Update</button>
+                  </Link>
+                </td>
+                <td>
+                  <button onClick={() => onDelete(data._id)}>Delete</button>
+                </td>
+              </tr>
             );
           })}
-        </Table.Body>
-      </Table>
+        </tbody>
+      </table>
     </div>
   );
 }

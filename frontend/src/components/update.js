@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Button, Form } from "semantic-ui-react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
@@ -109,194 +108,207 @@ export default function Update() {
       });
   };
   return (
-    <div>
-      <Form className="create-form">
-        <Form.Field>
-          <label>Name</label>
-          <input
-            placeholder="Name"
-            value={Name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Address</label>
-          <input
-            placeholder="Address"
-            value={Address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Serial Number</label>
-          <input
-            placeholder="Serial Number"
-            value={SerialNo}
-            onChange={(e) => setSerialNo(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Phone Provider</label>
-          <input
-            placeholder="Phone Provider"
-            value={PhoneProvider}
-            onChange={(e) => setPhoneProvider(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Internet Provider</label>
-          <input
-            placeholder="Internet Provider"
-            value={InternetProvider}
-            onChange={(e) => setInternetProvider(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Landline Number</label>
-          <input
-            placeholder="Landline Number"
-            value={LandlineNumber}
-            onChange={(e) => setLandlineNumber(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Cellular Number</label>
-          <input
-            placeholder="Cellular Number"
-            value={CellularNumber}
-            onChange={(e) => setCellularNumber(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Public IP</label>
-          <input
-            placeholder="Public IP"
-            value={PublicIP}
-            onChange={(e) => setPublicIP(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Subnet</label>
-          <input
-            placeholder="Subnet"
-            value={Subnet}
-            onChange={(e) => setSubnet(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>PLC IP</label>
-          <input
-            placeholder="PLC IP"
-            value={PlcIP}
-            onChange={(e) => setPlcIP(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>PLC MAC</label>
-          <input
-            placeholder="PLC MAC"
-            value={PlcMAC}
-            onChange={(e) => setPlcMAC(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>PLC Make</label>
-          <input
-            placeholder="PLC Make"
-            value={PlcMake}
-            onChange={(e) => setPlcMake(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>PLC Model</label>
-          <input
-            placeholder="PLC Model"
-            value={PlcModel}
-            onChange={(e) => setPlcModel(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>PLC Install Date</label>
-          <DatePicker
-            selected={PlcInstallDate}
-            onChange={handlePlcDateChange}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Panel IP</label>
-          <input
-            placeholder="Panel IP"
-            value={PanelIP}
-            onChange={(e) => setPanelIP(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Panel MAC</label>
-          <input
-            placeholder="Panel MAC"
-            value={PanelMAC}
-            onChange={(e) => setPanelMAC(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Panel Make</label>
-          <input
-            placeholder="Panel Make"
-            value={PanelMake}
-            onChange={(e) => setPanelMake(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Panel Model</label>
-          <input
-            placeholder="Panel Model"
-            value={PanelModel}
-            onChange={(e) => setPanelModel(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Panel Install Date</label>
-          <DatePicker
-            selected={PanelInstallDate}
-            onChange={handlePanelDateChange}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Panel OS</label>
-          <input
-            placeholder="Panel OS"
-            value={PanelOS}
-            onChange={(e) => setPanelOS(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Panel HMI</label>
-          <input
-            placeholder="Panel HMI"
-            value={PanelHMI}
-            onChange={(e) => setPanelHMI(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Pump Control Panel IP</label>
-          <input
-            placeholder="Pump Control Panel IP"
-            value={PumpControlPanelIP}
-            onChange={(e) => setPumpControlPanelIP(e.target.value)}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>Pump Control Panel MAC</label>
-          <input
-            placeholder="Pump Control Panel MAC"
-            value={PumpControlPanelMAC}
-            onChange={(e) => setPumpControlPanelMAC(e.target.value)}
-          />
-        </Form.Field>
-        <Button type="submit" onClick={updateAPIData}>
-          Update
-        </Button>
-      </Form>
+    <div className="scrollable">
+      <form>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Serial Number</th>
+              <th>Phone Provider</th>
+              <th>Internet Provider</th>
+              <th>Landline Number</th>
+              <th>Cellular Number</th>
+              <th>Public IP</th>
+              <th>Subnet</th>
+              <th>PLC IP</th>
+              <th>PLC MAC</th>
+              <th>PLC Make</th>
+              <th>PLC Model</th>
+              <th>PLC Install Date</th>
+              <th>Panel IP</th>
+              <th>Panel MAC</th>
+              <th>Panel Make</th>
+              <th>Panel Model</th>
+              <th>Panel Install Date</th>
+              <th>Panel OS</th>
+              <th>Panel HMI</th>
+              <th>Pump Control Panel IP</th>
+              <th>Pump Control Panel MAC</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input
+                  placeholder="Name"
+                  value={Name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Address"
+                  value={Address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Serial Number"
+                  value={SerialNo}
+                  onChange={(e) => setSerialNo(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Phone Provider"
+                  value={PhoneProvider}
+                  onChange={(e) => setPhoneProvider(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Internet Provider"
+                  value={InternetProvider}
+                  onChange={(e) => setInternetProvider(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Landline Number"
+                  value={LandlineNumber}
+                  onChange={(e) => setLandlineNumber(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Cellular Number"
+                  value={CellularNumber}
+                  onChange={(e) => setCellularNumber(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Public IP"
+                  value={PublicIP}
+                  onChange={(e) => setPublicIP(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Subnet"
+                  value={Subnet}
+                  onChange={(e) => setSubnet(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="PLC IP"
+                  value={PlcIP}
+                  onChange={(e) => setPlcIP(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="PLC MAC"
+                  value={PlcMAC}
+                  onChange={(e) => setPlcMAC(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="PLC Make"
+                  value={PlcMake}
+                  onChange={(e) => setPlcMake(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="PLC Model"
+                  value={PlcModel}
+                  onChange={(e) => setPlcModel(e.target.value)}
+                />
+              </td>
+              <td>
+                <DatePicker
+                  selected={PlcInstallDate}
+                  onChange={handlePlcDateChange}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Panel IP"
+                  value={PanelIP}
+                  onChange={(e) => setPanelIP(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Panel MAC"
+                  value={PanelMAC}
+                  onChange={(e) => setPanelMAC(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Panel Make"
+                  value={PanelMake}
+                  onChange={(e) => setPanelMake(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Panel Model"
+                  value={PanelModel}
+                  onChange={(e) => setPanelModel(e.target.value)}
+                />
+              </td>
+              <td>
+                <DatePicker
+                  selected={PanelInstallDate}
+                  onChange={handlePanelDateChange}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Panel OS"
+                  value={PanelOS}
+                  onChange={(e) => setPanelOS(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Panel HMI"
+                  value={PanelHMI}
+                  onChange={(e) => setPanelHMI(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Pump Control Panel IP"
+                  value={PumpControlPanelIP}
+                  onChange={(e) => setPumpControlPanelIP(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Pump Control Panel MAC"
+                  value={PumpControlPanelMAC}
+                  onChange={(e) => setPumpControlPanelMAC(e.target.value)}
+                />
+              </td>
+              <td>
+                <button type="submit" onClick={updateAPIData}>
+                  Update
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
     </div>
   );
 }
