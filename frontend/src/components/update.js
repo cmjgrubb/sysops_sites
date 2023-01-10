@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 
 export default function Update() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [_id, setID] = useState(null);
   const [Name, setName] = useState("");
   const [Address, setAddress] = useState("");
@@ -104,7 +104,7 @@ export default function Update() {
         PumpControlPanelMAC,
       })
       .then(() => {
-        navigate.push("/read");
+        navigate("/");
       });
   };
   return (
@@ -301,9 +301,7 @@ export default function Update() {
                 />
               </td>
               <td>
-                <button type="submit" onClick={updateAPIData}>
-                  Update
-                </button>
+                <input type="submit" onClick={updateAPIData} value="Update" />
               </td>
             </tr>
           </tbody>
