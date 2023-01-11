@@ -9,11 +9,9 @@ module.exports = (mongoose) => {
       },
       Address: {
         type: String,
-        unique: true,
       },
       SerialNo: {
         type: String,
-        unique: true,
       },
       PhoneProvider: {
         type: String,
@@ -23,27 +21,21 @@ module.exports = (mongoose) => {
       },
       LandlineNumber: {
         type: String,
-        unique: true,
       },
       CellularNumber: {
         type: String,
-        unique: true,
       },
       PublicIP: {
         type: String,
-        unique: true,
       },
       Subnet: {
         type: String,
-        unique: true,
       },
       PlcIP: {
         type: String,
-        unique: true,
       },
       PlcMAC: {
         type: String,
-        unique: true,
       },
       PlcMake: {
         type: String,
@@ -56,11 +48,9 @@ module.exports = (mongoose) => {
       },
       PanelIP: {
         type: String,
-        unique: true,
       },
       PanelMAC: {
         type: String,
-        unique: true,
       },
       PanelMake: {
         type: String,
@@ -79,11 +69,9 @@ module.exports = (mongoose) => {
       },
       PumpControlPanelIP: {
         type: String,
-        unique: true,
       },
       PumpControlPanelMAC: {
         type: String,
-        unique: true,
       },
     })
   );

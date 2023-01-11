@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 export default function Update() {
   const navigate = useNavigate();
@@ -30,14 +30,6 @@ export default function Update() {
   const [PanelHMI, setPanelHMI] = useState("");
   const [PumpControlPanelIP, setPumpControlPanelIP] = useState("");
   const [PumpControlPanelMAC, setPumpControlPanelMAC] = useState("");
-
-  const handlePlcDateChange = (date) => {
-    setPlcInstallDate(date);
-  };
-
-  const handlePanelDateChange = (date) => {
-    setPanelInstallDate(date);
-  };
 
   useEffect(() => {
     setID(localStorage.getItem("ID"));
@@ -76,7 +68,8 @@ export default function Update() {
     setPumpControlPanelMAC(localStorage.getItem("Pump Control Panel MAC"));
   }, []);
 
-  const updateAPIData = () => {
+  const updateAPIData = (event) => {
+    event.preventDefault();
     axios
       .put(`http://localhost:8080/api/sysops/${_id}`, {
         Name,
@@ -103,13 +96,17 @@ export default function Update() {
         PumpControlPanelIP,
         PumpControlPanelMAC,
       })
-      .then(() => {
+      .then((res) => {
+        console.log(res);
         navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
   return (
     <div className="scrollable">
-      <form>
+      <form onSubmit={updateAPIData}>
         <table>
           <thead>
             <tr>
@@ -235,7 +232,7 @@ export default function Update() {
               <td>
                 <DatePicker
                   selected={PlcInstallDate}
-                  onChange={handlePlcDateChange}
+                  onChange={(date) => setPlcInstallDate(date)}
                 />
               </td>
               <td>
@@ -269,7 +266,7 @@ export default function Update() {
               <td>
                 <DatePicker
                   selected={PanelInstallDate}
-                  onChange={handlePanelDateChange}
+                  onChange={(date) => setPanelInstallDate(date)}
                 />
               </td>
               <td>
@@ -301,7 +298,7 @@ export default function Update() {
                 />
               </td>
               <td>
-                <input type="submit" onClick={updateAPIData} value="Update" />
+                <input type="submit" value="Update" />
               </td>
             </tr>
           </tbody>
