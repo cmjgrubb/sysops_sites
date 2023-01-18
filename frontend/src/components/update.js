@@ -20,12 +20,14 @@ export default function Update() {
   const [PlcMAC, setPlcMAC] = useState("");
   const [PlcMake, setPlcMake] = useState("");
   const [PlcModel, setPlcModel] = useState("");
-  const [PlcInstallDate, setPlcInstallDate] = useState(null);
+  const [PlcInstallDate, setPlcInstallDate] = useState(new Date("01/01/1970"));
   const [PanelIP, setPanelIP] = useState("");
   const [PanelMAC, setPanelMAC] = useState("");
   const [PanelMake, setPanelMake] = useState("");
   const [PanelModel, setPanelModel] = useState("");
-  const [PanelInstallDate, setPanelInstallDate] = useState(null);
+  const [PanelInstallDate, setPanelInstallDate] = useState(
+    new Date("01/01/1970")
+  );
   const [PanelOS, setPanelOS] = useState("");
   const [PanelHMI, setPanelHMI] = useState("");
   const [PumpControlPanelIP, setPumpControlPanelIP] = useState("");
@@ -50,7 +52,7 @@ export default function Update() {
       setPlcInstallDate(new Date(localStorage.getItem("PLC Install Date")));
     } catch (error) {
       console.error(error);
-      setPlcInstallDate(null);
+      setPlcInstallDate(new Date("01/01/1970"));
     }
     setPanelIP(localStorage.getItem("Panel IP"));
     setPanelMAC(localStorage.getItem("Panel MAC"));
@@ -60,7 +62,7 @@ export default function Update() {
       setPanelInstallDate(new Date(localStorage.getItem("Panel Install Date")));
     } catch (error) {
       console.error(error);
-      setPanelInstallDate(null);
+      setPanelInstallDate(new Date("01/01/1970"));
     }
     setPanelOS(localStorage.getItem("Panel OS"));
     setPanelHMI(localStorage.getItem("Panel HMI"));

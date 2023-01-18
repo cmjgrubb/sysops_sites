@@ -19,12 +19,14 @@ export default function Create() {
   const [PlcMAC, setPlcMAC] = useState("");
   const [PlcMake, setPlcMake] = useState("");
   const [PlcModel, setPlcModel] = useState("");
-  const [PlcInstallDate, setPlcInstallDate] = useState(null);
+  const [PlcInstallDate, setPlcInstallDate] = useState(new Date("01/01/1970"));
   const [PanelIP, setPanelIP] = useState("");
   const [PanelMAC, setPanelMAC] = useState("");
   const [PanelMake, setPanelMake] = useState("");
   const [PanelModel, setPanelModel] = useState("");
-  const [PanelInstallDate, setPanelInstallDate] = useState(null);
+  const [PanelInstallDate, setPanelInstallDate] = useState(
+    new Date("01/01/1970")
+  );
   const [PanelOS, setPanelOS] = useState("");
   const [PanelHMI, setPanelHMI] = useState("");
   const [PumpControlPanelIP, setPumpControlPanelIP] = useState("");
