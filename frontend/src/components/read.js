@@ -79,6 +79,10 @@ export default function Read() {
 
   return (
     <div className="scrollable">
+      <header className="App-header">
+        <img src="./Seal.png" alt="Frederick Water Seal" className="logo" />
+        <h1 className="header-title">System Operations Sites</h1>
+      </header>
       <table>
         <thead>
           <tr>

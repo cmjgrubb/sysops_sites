@@ -1,3 +1,7 @@
+table {
+  width: 3500px;
+}
+
 th {
   background-color: #014b92;
   color: white;
@@ -16,6 +20,28 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #c0da2f;
+}
+
+.App-header {
+  background-color: #0f4d90;
+  height: 105px;
+  width: 3500px;
+}
+
+.header-title {
+  color: #bfd633;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 3em;
+  font-size: 48px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  float: left;
+  padding-top: 5px;
+  padding-left: 5px;
 }
 
 .main {
