@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { format } from "date-fns";
 import "../App.css";
 
 export default function Read() {
@@ -130,12 +131,12 @@ export default function Read() {
                 <td>{data.PlcMAC}</td>
                 <td>{data.PlcMake}</td>
                 <td>{data.PlcModel}</td>
-                <td>{data.PlcInstallDate}</td>
+                <td>{format(new Date(data.PlcInstallDate), "P")}</td>
                 <td>{data.PanelIP}</td>
                 <td>{data.PanelMAC}</td>
                 <td>{data.PanelMake}</td>
                 <td>{data.PanelModel}</td>
-                <td>{data.PanelInstallDate}</td>
+                <td>{format(new Date(data.PanelInstallDate), "P")}</td>
                 <td>{data.PanelOS}</td>
                 <td>{data.PanelHMI}</td>
                 <td>{data.PumpControlPanelIP}</td>
