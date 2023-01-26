@@ -1,3 +1,19 @@
+button {
+  color: #c0da2f;
+  background-color: #014b92;
+  padding: 10px;
+  border: 1px solid #014b92;
+}
+
+button:hover {
+  color: #014b92;
+  background-color: #c0da2f;
+}
+
+nav {
+  margin: 10px;
+}
+
 table {
   width: 3500px;
 }
@@ -23,13 +39,25 @@ tr:hover {
 }
 
 .App-header {
-  background-color: #0f4d90;
+  background-color: #014b92;
   height: 105px;
   width: 3500px;
 }
 
+.btn {
+  color: #c0da2f;
+  background-color: #014b92;
+  padding: 10px;
+  border: 1px solid #014b92;
+}
+
+.btn:hover {
+  color: #014b92;
+  background-color: #c0da2f;
+}
+
 .header-title {
-  color: #bfd633;
+  color: #c0da2f;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 3em;

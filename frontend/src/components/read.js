@@ -154,6 +154,11 @@ export default function Read() {
           })}
         </tbody>
       </table>
+      <nav>
+        <Link to="/create">
+          <button>Create</button>
+        </Link>
+      </nav>
     </div>
   );
 }

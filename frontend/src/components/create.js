@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Create() {
   let navigate = useNavigate();
@@ -249,12 +250,17 @@ export default function Create() {
                 />
               </td>
               <td>
-                <input type="submit" value="Submit" />
+                <input className="btn" type="submit" value="Submit" />
               </td>
             </tr>
           </tbody>
         </table>
       </form>
+      <nav>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+      </nav>
     </div>
   );
 }
