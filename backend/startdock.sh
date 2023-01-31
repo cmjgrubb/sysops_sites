@@ -14,4 +14,4 @@ currentdir=`basename $presentworking`
 # Stop all Docker containers, build the image, and run it
 #docker stop $(docker container ls -q)
 docker build -t $user/$currentdir .
-docker run -d -p 3000:3000 $user/$currentdir
+docker run -d --network sysops_sites-network -p 8080:8080 $user/$currentdir
