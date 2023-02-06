@@ -44,7 +44,7 @@ export default function Create() {
   const postData = (event) => {
     event.preventDefault();
     axios
-      .post(`http://localhost:8080/api/sysops`, {
+      .post(`http://sysops.frederickwater.com:8080/api/sysops`, {
         Name,
         Address,
         SerialNo,

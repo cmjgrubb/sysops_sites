@@ -7,10 +7,12 @@ import "../App.css";
 export default function Read() {
   const [APIData, setAPIData] = useState([]);
   useEffect(() => {
-    axios.get(`http://localhost:8080/api/sysops`).then((response) => {
-      console.log(response.data);
-      setAPIData(response.data);
-    });
+    axios
+      .get(`http://sysops.frederickwater.com:8080/api/sysops`)
+      .then((response) => {
+        console.log(response.data);
+        setAPIData(response.data);
+      });
   }, []);
 
   const setData = (data) => {
@@ -67,15 +69,19 @@ export default function Read() {
   };
 
   const getData = () => {
-    axios.get(`http://localhost:8080/api/sysops`).then((getData) => {
-      setAPIData(getData.data);
-    });
+    axios
+      .get(`http://sysops.frederickwater.com:8080/api/sysops`)
+      .then((getData) => {
+        setAPIData(getData.data);
+      });
   };
 
   const onDelete = (_id) => {
-    axios.delete(`http://localhost:8080/api/sysops/${_id}`).then(() => {
-      getData();
-    });
+    axios
+      .delete(`http://sysops.frederickwater.com:8080/api/sysops/${_id}`)
+      .then(() => {
+        getData();
+      });
   };
 
   return (

@@ -74,7 +74,7 @@ export default function Update() {
   const updateAPIData = (event) => {
     event.preventDefault();
     axios
-      .put(`http://localhost:8080/api/sysops/${_id}`, {
+      .put(`http://sysops.frederickwater.com:8080/api/sysops/${_id}`, {
         Name,
         Address,
         SerialNo,
