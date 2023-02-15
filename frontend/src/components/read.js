@@ -20,6 +20,20 @@ export default function Read() {
       _id,
       Name,
       Address,
+      PumpType,
+      Voltage,
+      Phase,
+      MotorHP,
+      TempPower,
+      ElectricCoop,
+      AccountNumber,
+      MeterNumber,
+      GridName,
+      TransLocation,
+      Force,
+      Gravity,
+      PumpsTo,
+      ForceConnection,
       SerialNo,
       PhoneProvider,
       InternetProvider,
@@ -45,6 +59,20 @@ export default function Read() {
     localStorage.setItem("ID", _id);
     localStorage.setItem("Name", Name);
     localStorage.setItem("Address", Address);
+    localStorage.setItem("Pump Type", PumpType);
+    localStorage.setItem("Voltage", Voltage);
+    localStorage.setItem("Phase", Phase);
+    localStorage.setItem("Motor HP", MotorHP);
+    localStorage.setItem("Temp Power", TempPower);
+    localStorage.setItem("Electric Coop", ElectricCoop);
+    localStorage.setItem("Account Number", AccountNumber);
+    localStorage.setItem("Meter Number", MeterNumber);
+    localStorage.setItem("Grid Name", GridName);
+    localStorage.setItem("Transformer Location", TransLocation);
+    localStorage.setItem("Force", Force);
+    localStorage.setItem("Gravity", Gravity);
+    localStorage.setItem("Pumps To", PumpsTo);
+    localStorage.setItem("Force Connection", ForceConnection);
     localStorage.setItem("Serial Number", SerialNo);
     localStorage.setItem("Phone Provider", PhoneProvider);
     localStorage.setItem("Internet Provider", InternetProvider);
@@ -95,6 +123,20 @@ export default function Read() {
           <tr>
             <th>Name</th>
             <th>Address</th>
+            <th>Pump Type</th>
+            <th>Voltage</th>
+            <th>Phase</th>
+            <th>Motor HP</th>
+            <th>Temp Power</th>
+            <th>Electric Coop</th>
+            <th>Account Number</th>
+            <th>Meter Number</th>
+            <th>Grid Name</th>
+            <th>Transformer Location</th>
+            <th>Force</th>
+            <th>Gravity</th>
+            <th>Pumps To</th>
+            <th>Force Connection</th>
             <th>Serial Number</th>
             <th>Phone Provider</th>
             <th>Internet Provider</th>
@@ -126,6 +168,20 @@ export default function Read() {
               <tr key={data._id}>
                 <td>{data.Name}</td>
                 <td>{data.Address}</td>
+                <td>{data.PumpType}</td>
+                <td>{data.Voltage}</td>
+                <td>{data.Phase}</td>
+                <td>{data.MotorHP}</td>
+                <td>{data.TempPower}</td>
+                <td>{data.ElectricCoop}</td>
+                <td>{data.AccountNumber}</td>
+                <td>{data.MeterNumber}</td>
+                <td>{data.GridName}</td>
+                <td>{data.TransLocation}</td>
+                <td>{data.Force ? "✅" : "❌"}</td>
+                <td>{data.Gravity ? "✅" : "❌"}</td>
+                <td>{data.PumpsTo}</td>
+                <td>{data.ForceConnection}</td>
                 <td>{data.SerialNo}</td>
                 <td>{data.PhoneProvider}</td>
                 <td>{data.InternetProvider}</td>

@@ -10,6 +10,48 @@ module.exports = (mongoose) => {
       Address: {
         type: String,
       },
+      PumpType: {
+        type: String,
+      },
+      Voltage: {
+        type: String,
+      },
+      Phase: {
+        type: String,
+      },
+      MotorHP: {
+        type: Number,
+      },
+      TempPower: {
+        type: String,
+      },
+      ElectricCoop: {
+        type: String,
+      },
+      AccountNumber: {
+        type: String,
+      },
+      MeterNumber: {
+        type: String,
+      },
+      GridName: {
+        type: String,
+      },
+      TransLocation: {
+        type: String,
+      },
+      Force: {
+        type: Boolean,
+      },
+      Gravity: {
+        type: Boolean,
+      },
+      PumpsTo: {
+        type: String,
+      },
+      ForceConnection: {
+        type: String,
+      },
       SerialNo: {
         type: String,
       },

@@ -10,6 +10,20 @@ export default function Update() {
   const [_id, setID] = useState(null);
   const [Name, setName] = useState("");
   const [Address, setAddress] = useState("");
+  const [PumpType, setPumpType] = useState("");
+  const [Voltage, setVoltage] = useState("");
+  const [Phase, setPhase] = useState("");
+  const [MotorHP, setMotorHP] = useState("");
+  const [TempPower, setTempPower] = useState("");
+  const [ElectricCoop, setElectricCoop] = useState("");
+  const [AccountNumber, setAccountNumber] = useState("");
+  const [MeterNumber, setMeterNumber] = useState("");
+  const [GridName, setGridName] = useState("");
+  const [TransLocation, setTransLocation] = useState("");
+  const [Force, setForce] = useState(false);
+  const [Gravity, setGravity] = useState(false);
+  const [PumpsTo, setPumpsTo] = useState("");
+  const [ForceConnection, setForceConnection] = useState("");
   const [SerialNo, setSerialNo] = useState("");
   const [PhoneProvider, setPhoneProvider] = useState("");
   const [InternetProvider, setInternetProvider] = useState("");
@@ -38,6 +52,20 @@ export default function Update() {
     setID(localStorage.getItem("ID"));
     setName(localStorage.getItem("Name"));
     setAddress(localStorage.getItem("Address"));
+    setPumpType(localStorage.getItem("Pump Type"));
+    setVoltage(localStorage.getItem("Voltage"));
+    setPhase(localStorage.getItem("Phase"));
+    setMotorHP(localStorage.getItem("Motor HP"));
+    setTempPower(localStorage.getItem("Temp Power"));
+    setElectricCoop(localStorage.getItem("Electric Coop"));
+    setAccountNumber(localStorage.getItem("Account Number"));
+    setMeterNumber(localStorage.getItem("Meter Number"));
+    setGridName(localStorage.getItem("Grid Name"));
+    setTransLocation(localStorage.getItem("Transformer Location"));
+    setForce(localStorage.getItem("Force"));
+    setGravity(localStorage.getItem("Gravity"));
+    setPumpsTo(localStorage.getItem("Pumps To"));
+    setForceConnection(localStorage.getItem("Force Connection"));
     setSerialNo(localStorage.getItem("Serial Number"));
     setPhoneProvider(localStorage.getItem("Phone Provider"));
     setInternetProvider(localStorage.getItem("Internet Provider"));
@@ -77,6 +105,20 @@ export default function Update() {
       .put(`http://sysops.frederickwater.com:8080/api/sysops/${_id}`, {
         Name,
         Address,
+        PumpType,
+        Voltage,
+        Phase,
+        MotorHP,
+        TempPower,
+        ElectricCoop,
+        AccountNumber,
+        MeterNumber,
+        GridName,
+        TransLocation,
+        Force,
+        Gravity,
+        PumpsTo,
+        ForceConnection,
         SerialNo,
         PhoneProvider,
         InternetProvider,
@@ -115,6 +157,20 @@ export default function Update() {
             <tr>
               <th>Name</th>
               <th>Address</th>
+              <th>Pump Type</th>
+              <th>Voltage</th>
+              <th>Phase</th>
+              <th>Motor HP</th>
+              <th>Temp Power</th>
+              <th>Electric Coop</th>
+              <th>Account Number</th>
+              <th>Meter Number</th>
+              <th>Grid Name</th>
+              <th>Transformer Location</th>
+              <th>Force</th>
+              <th>Gravity</th>
+              <th>Pumps To</th>
+              <th>Force Connection</th>
               <th>Serial Number</th>
               <th>Phone Provider</th>
               <th>Internet Provider</th>
@@ -153,6 +209,104 @@ export default function Update() {
                   placeholder="Address"
                   value={Address}
                   onChange={(e) => setAddress(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Pump Type"
+                  value={PumpType}
+                  onChange={(e) => setPumpType(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Voltage"
+                  value={Voltage}
+                  onChange={(e) => setVoltage(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Phase"
+                  value={Phase}
+                  onChange={(e) => setPhase(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Motor HP"
+                  value={MotorHP}
+                  onChange={(e) => setMotorHP(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Temp Power"
+                  value={TempPower}
+                  onChange={(e) => setTempPower(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Electric Coop"
+                  value={ElectricCoop}
+                  onChange={(e) => setElectricCoop(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Account Number"
+                  value={AccountNumber}
+                  onChange={(e) => setAccountNumber(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Meter Number"
+                  value={MeterNumber}
+                  onChange={(e) => setMeterNumber(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Grid Name"
+                  value={GridName}
+                  onChange={(e) => setGridName(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Transformer Location"
+                  value={TransLocation}
+                  onChange={(e) => setTransLocation(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  type="checkbox"
+                  checked={Force}
+                  onChange={(e) => setForce(e.target.checked)}
+                />
+              </td>
+              <td>
+                <input
+                  type="checkbox"
+                  checked={Gravity}
+                  onChange={(e) => setGravity(e.target.checked)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Pumps To"
+                  value={PumpsTo}
+                  onChange={(e) => setPumpsTo(e.target.value)}
+                />
+              </td>
+              <td>
+                <input
+                  placeholder="Force Connection"
+                  value={ForceConnection}
+                  onChange={(e) => setForceConnection(e.target.value)}
                 />
               </td>
               <td>
