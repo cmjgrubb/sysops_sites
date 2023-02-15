@@ -13,7 +13,7 @@ export default function Update() {
   const [PumpType, setPumpType] = useState("");
   const [Voltage, setVoltage] = useState("");
   const [Phase, setPhase] = useState("");
-  const [MotorHP, setMotorHP] = useState("");
+  const [MotorHP, setMotorHP] = useState(0);
   const [TempPower, setTempPower] = useState("");
   const [ElectricCoop, setElectricCoop] = useState("");
   const [AccountNumber, setAccountNumber] = useState("");
@@ -284,14 +284,14 @@ export default function Update() {
               <td>
                 <input
                   type="checkbox"
-                  checked={Force}
+                  defaultChecked={Force}
                   onChange={(e) => setForce(e.target.checked)}
                 />
               </td>
               <td>
                 <input
                   type="checkbox"
-                  checked={Gravity}
+                  defaultChecked={Gravity}
                   onChange={(e) => setGravity(e.target.checked)}
                 />
               </td>
