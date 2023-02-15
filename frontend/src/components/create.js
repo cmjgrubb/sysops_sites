@@ -12,7 +12,7 @@ export default function Create() {
   const [PumpType, setPumpType] = useState("");
   const [Voltage, setVoltage] = useState("");
   const [Phase, setPhase] = useState("");
-  const [MotorHP, setMotorHP] = useState("");
+  const [MotorHP, setMotorHP] = useState(0);
   const [TempPower, setTempPower] = useState("");
   const [ElectricCoop, setElectricCoop] = useState("");
   const [AccountNumber, setAccountNumber] = useState("");

@@ -14,10 +14,6 @@ nav {
   margin: 10px;
 }
 
-table {
-  width: 4000px;
-}
-
 th {
   background-color: #014b92;
   color: white;
@@ -39,9 +35,9 @@ tr:hover {
 }
 
 .App-header {
-  background-color: #014b92;
+  background-image: linear-gradient(to right, #014b92, white);
   height: 105px;
-  width: 4000px;
+  width: 700px;
 }
 
 .btn {
