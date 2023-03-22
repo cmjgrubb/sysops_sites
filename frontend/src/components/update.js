@@ -284,6 +284,7 @@ export default function Update() {
               <td>
                 <input
                   type="checkbox"
+                  value={Force}
                   defaultChecked={Force}
                   onChange={(e) => setForce(e.target.checked)}
                 />
@@ -291,6 +292,7 @@ export default function Update() {
               <td>
                 <input
                   type="checkbox"
+                  value={Gravity}
                   defaultChecked={Gravity}
                   onChange={(e) => setGravity(e.target.checked)}
                 />
