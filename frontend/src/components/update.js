@@ -62,8 +62,14 @@ export default function Update() {
     setMeterNumber(localStorage.getItem("Meter Number"));
     setGridName(localStorage.getItem("Grid Name"));
     setTransLocation(localStorage.getItem("Transformer Location"));
-    setForce(localStorage.getItem("Force"));
-    setGravity(localStorage.getItem("Gravity"));
+    const storedForce = localStorage.getItem("Force");
+    if (storedForce && storedForce !== "false") {
+      setForce(true);
+    }
+    const storedGravity = localStorage.getItem("Gravity");
+    if (storedGravity && storedGravity !== "false") {
+      setGravity(true);
+    }
     setPumpsTo(localStorage.getItem("Pumps To"));
     setForceConnection(localStorage.getItem("Force Connection"));
     setSerialNo(localStorage.getItem("Serial Number"));
@@ -149,6 +155,7 @@ export default function Update() {
         console.log(err);
       });
   };
+
   return (
     <div className="scrollable">
       <form onSubmit={updateAPIData}>
@@ -284,16 +291,14 @@ export default function Update() {
               <td>
                 <input
                   type="checkbox"
-                  value={Force}
-                  defaultChecked={Force}
+                  checked={Force}
                   onChange={(e) => setForce(e.target.checked)}
                 />
               </td>
               <td>
                 <input
                   type="checkbox"
-                  value={Gravity}
-                  defaultChecked={Gravity}
+                  checked={Gravity}
                   onChange={(e) => setGravity(e.target.checked)}
                 />
               </td>
